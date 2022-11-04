@@ -5,7 +5,7 @@ import Logo from './img/chat.png';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection,  query, orderBy, limit, serverTimestamp, addDoc } from 'firebase/firestore';
 import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-//import 'firebase/compat/analytics';
+
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
