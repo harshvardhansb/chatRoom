@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect} from 'react';
 import './App.css';
+import Logo from './img/chat.png';
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection,  query, orderBy, limit, serverTimestamp, addDoc } from 'firebase/firestore';
@@ -36,7 +37,7 @@ function App() {
   return (
     <div className="App">
       <header>
-        <h1>ChatRoom💬 </h1>
+        <h1><img src={Logo} /> ChatRoom</h1>
         <SignOut />
       </header>
 
