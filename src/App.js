@@ -56,14 +56,14 @@ function SignIn() {
     signInWithPopup(auth, provider)
   }
 
-  const signInAnonymous = () => {
-    auth.signInAnonymously().catch(alert);
-  }
+//   const signInAnonymous = () => {
+//     auth.signInAnonymously().catch(alert);
+//   }
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button><br/>
-      <button className="sign-in" onClick={signInAnonymous}>Sign in Anonymously</button>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
+//       <button className="sign-in" onClick={signInAnonymous}>Sign in Anonymously</button>
       <p>Do not violate the community guidelines </p>
     </>
   )
