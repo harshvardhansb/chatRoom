@@ -1,4 +1,4 @@
-# - It's my personal chat-application . 🧑‍💻
+# - It's react based chat-application website . 🧑‍💻
 
 
 ## ScreenShots 🖼️
