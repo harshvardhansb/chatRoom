@@ -1,11 +1,12 @@
 import React, { useRef, useState, useEffect} from 'react';
 import './App.css';
 import Logo from './img/chat.png';
+import image from './img/anonymous.png';
 
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection,  query, orderBy, limit, serverTimestamp, addDoc } from 'firebase/firestore';
-import { getAuth, signInWithPopup, GoogleAuthProvider } from 'firebase/auth';
-
+import { getAuth, signInWithPopup, GoogleAuthProvider ,signInAnonymously , onAuthStateChanged  } from 'firebase/auth';
+//import 'firebase/compat/analytics';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
@@ -56,14 +57,15 @@ function SignIn() {
     signInWithPopup(auth, provider)
   }
 
-//   const signInAnonymous = () => {
-//     auth.signInAnonymously().catch(alert);
-//   }
+  const signInAnonymous = () => {
+    // auth.signInAnonymously().catch(alert);
+    signInAnonymously(auth).catch(alert);
+  }
 
   return (
     <>
-      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button>
-//       <button className="sign-in" onClick={signInAnonymous}>Sign in Anonymously</button>
+      <button className="sign-in" onClick={signInWithGoogle}>Sign in with Google</button><br/>
+      <button className="sign-in" onClick={signInAnonymous}>Sign in Anonymously</button>
       <p>Do not violate the community guidelines </p>
     </>
   )
@@ -101,7 +103,7 @@ function ChatRoom() {
 
     messageInput.current.focus();
     setFormValue('');
-    //dummy is updated when the component is re-rendered, instead of after a message is sent
+    //dummy is updated when the component is re-rendered, instead of after a message is sent.
   }
 
   //Everytime messages is modified, will use the dummy reference to scroll to the bottom.
@@ -122,7 +124,7 @@ function ChatRoom() {
 
       <input ref={messageInput} value={formValue} onChange={(e) => setFormValue(e.target.value)} placeholder="say something nice" />
 
-      <button type="submit" disabled={!formValue}>⬆️</button>
+      <button type="submit" disabled={!formValue}>🕊️</button>
 
     </form>
   </>)
@@ -136,7 +138,7 @@ function ChatMessage(props) {
 
   return (<>
     <div className={`message ${messageClass}`}>
-      <img src={photoURL || 'https://api.adorable.io/avatars/23/abott@adorable.png'} referrerPolicy="no-referrer" />
+      <img src={photoURL || image } referrerPolicy="no-referrer" />
       <p>{text}</p>
     </div>
   </>)
