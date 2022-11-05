@@ -3,9 +3,9 @@
 
 ## ScreenShots 🖼️
 
-![](ss/s1.png)
+![](public/s1.png)
 
-![](ss/ss1.png)
+![](public/ss1.png)
 
 # Overview ✍️
 
