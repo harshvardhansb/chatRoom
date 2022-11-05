@@ -101,7 +101,7 @@ function ChatRoom() {
 
     messageInput.current.focus();
     setFormValue('');
-    //dummy is updated when the component is re-rendered, instead of after a message is sent.
+    //dummy is updated when the component is re-rendered, instead of after a message is sent
   }
 
   //Everytime messages is modified, will use the dummy reference to scroll to the bottom.
